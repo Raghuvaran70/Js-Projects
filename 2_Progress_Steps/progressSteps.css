@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+    --line-borde-fill:#3498db;
+    --line-borde-empty:#e0e0e0;
+}
+*{
+    box-sizing:border-box;
+    
+}
+
+body{
+    background-color: #f6f7fb;
+    margin:0;
+    display:flex;
+    /* flex-direction: column; */
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family: 'Muli', sans-serif;
+}
+
+.container{
+    text-align:center;
+}
+
+.progress-container{
+    /* border:2px solid pink; */
+    display:flex;
+    justify-content:space-between;
+    max-width: 100%;
+    width:350px;
+    margin-bottom: 30px;
+    position:relative;
+}
+
+.progress-container::before{
+    content:"";
+     background-color:var(--line-borde-empty);
+    height:4px;
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    z-index:-1;
+    width:100%;
+    transition:width 0.4s ease;
+}
+
+.progress{
+    background-color:var(--line-borde-fill);
+    height:4px;
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    z-index:-1;
+    width:0%;
+    transition:width 0.4s ease;
+}
+
+.circle{
+    background-color: white;
+    color: gray;
+    border-radius:50%;
+    height:30px;
+    width:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid lightgray;
+    transition:background-color 0.4s ease, border-color 0.4s
+}
+
+.circle.active{
+    border-color:var(--line-borde-fill);
+    background-color:var(--line-borde-fill);
+    color:white;
+}
+
+.btn{
+    background-color: var(--line-borde-fill);
+    color:white;
+    border: none;
+    padding: 8px 20px;
+    border-radius:5px;
+    margin:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+.btn:active{
+    transform:scale(0.98);
+}
+.btn:focus{
+    outline:none;
+}
+.btn:disabled{
+    background-color: lightgray;
+    cursor:not-allowed;
+}
+
+
+
+/* .progress{
+    width:500px;
+    height:20px;
+    -webkit-appearance:none;
+    appearance:none;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    margin-bottom:30px;
+} */
